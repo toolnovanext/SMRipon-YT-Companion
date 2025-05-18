@@ -5,60 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SMRipon YT Companion</title>
   <style>
-    /* Popup styles */
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0,0,0,0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .popup-content {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    .popup-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-    }
-    .popup-buttons button {
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .telegram-btn {
-      background-color: #0088cc;
-      color: white;
-      border: none;
-    }
-    .youtube-btn {
-      background-color: #FF0000;
-      color: white;
-      border: none;
-    }
-    .ok-btn {
-      background-color: #4285f4;
-      color: white;
-      border: none;
-    }
-
-    /* Original App Styles */
+    /* [Same CSS as your original code] */
     :root {
       --bg-color: #ffffff;
       --text-color: #333333;
@@ -199,36 +146,12 @@
       .input-section {
         grid-template-columns: repeat(3, 1fr);
       }
-      .popup-buttons {
-        flex-direction: row;
-        justify-content: center;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Welcome Popup -->
-  <div class="popup-overlay" id="welcomePopup">
-    <div class="popup-content">
-      <h2>Welcome to SMRipon YT Companion</h2>
-      <p>Realizing Dreams Through the Touch of Technology</p>
-      <p>Developer: 😊 S M Ripon</p>
-      <div class="popup-buttons">
-        <button class="telegram-btn" onclick="window.open('https://t.me/shopnotamal', '_blank')">
-          Telegram
-        </button>
-        <button class="youtube-btn" onclick="window.open('https://youtube.com/@accessibleresource?si=LGhrnQDGHw-BTroD', '_blank')">
-          YouTube
-        </button>
-        <button class="ok-btn" onclick="document.getElementById('welcomePopup').style.display = 'none'">
-          OK
-        </button>
-      </div>
-    </div>
-  </div>
-
   <div class="container">
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+    <button class="theme-toggle" onclick="toggleTheme()">馃寭 Toggle Theme</button>
     <div class="app-description">
       <h1>SMRipon YT Companion</h1>
       <p>Generate complete YouTube content preparation materials including SEO-optimized titles, descriptions, timestamps, hashtags, and tags with just a few clicks!</p>
@@ -263,16 +186,6 @@
   </div>
 
   <script>
-    // Show welcome popup when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('welcomePopup').style.display = 'flex';
-      
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.body.setAttribute('data-theme', 'dark');
-      }
-    });
-
     const API_KEY = 'AIzaSyDM-EDCbw2axD0KS-daOMTIyIyn71XTtJo';
     const loading = document.querySelector('.loading');
     const outputSection = document.getElementById('output');
@@ -427,6 +340,13 @@
         localStorage.setItem('theme', 'dark');
       }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+      }
+    });
   </script>
 </body>
 </html>
